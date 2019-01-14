@@ -2175,35 +2175,35 @@ ul.icons {
     #footer input[type="button"]:hover,
     #footer button:hover,
     #footer .button:hover {
-      box-shadow: inset 0 0 0 1px #ce1b28;
-      color: #ce1b28 !important; }
+      box-shadow: inset 0 0 0 1px rgb(99, 205, 218);
+      color: rgb(99, 205, 218) !important; }
       #footer input[type="submit"]:hover:active,
       #footer input[type="reset"]:hover:active,
       #footer input[type="button"]:hover:active,
       #footer button:hover:active,
       #footer .button:hover:active {
-        background-color: rgba(206, 27, 40, 0.25); }
+        background-color: rgba(99, 205, 218, 0.25); }
     #footer input[type="submit"].primary,
     #footer input[type="reset"].primary,
     #footer input[type="button"].primary,
     #footer button.primary,
     #footer .button.primary {
       box-shadow: none;
-      background-color: #ce1b28;
+      background-color: rgb(99, 205, 218);
       color: #ffffff !important; }
       #footer input[type="submit"].primary:hover,
       #footer input[type="reset"].primary:hover,
       #footer input[type="button"].primary:hover,
       #footer button.primary:hover,
       #footer .button.primary:hover {
-        background-color: #e2212f;
+        background-color: rgb(7, 179, 198);
         box-shadow: none; }
         #footer input[type="submit"].primary:hover:active,
         #footer input[type="reset"].primary:hover:active,
         #footer input[type="button"].primary:hover:active,
         #footer button.primary:hover:active,
         #footer .button.primary:hover:active {
-          background-color: #b71824; }
+          background-color: rgb(84, 111, 227); }
   #footer label {
     color: #ffffff; }
   #footer input[type="text"],
@@ -2224,8 +2224,8 @@ ul.icons {
     #footer input[type="url"]:focus,
     #footer select:focus,
     #footer textarea:focus {
-      border-color: #ce1b28;
-      box-shadow: 0 0 0 1px #ce1b28; }
+      border-color: rgb(99, 205, 218);
+      box-shadow: 0 0 0 1px rgb(99, 205, 218); }
   #footer select {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' preserveAspectRatio='none' viewBox='0 0 40 40'%3E%3Cpath d='M9.4,12.3l10.4,10.4l10.4-10.4c0.2-0.2,0.5-0.4,0.9-0.4c0.3,0,0.6,0.1,0.9,0.4l3.3,3.3c0.2,0.2,0.4,0.5,0.4,0.9 c0,0.4-0.1,0.6-0.4,0.9L20.7,31.9c-0.2,0.2-0.5,0.4-0.9,0.4c-0.3,0-0.6-0.1-0.9-0.4L4.3,17.3c-0.2-0.2-0.4-0.5-0.4-0.9 c0-0.4,0.1-0.6,0.4-0.9l3.3-3.3c0.2-0.2,0.5-0.4,0.9-0.4S9.1,12.1,9.4,12.3z' fill='rgba(255, 255, 255, 0.25)' /%3E%3C/svg%3E"); }
     #footer select option {
@@ -2240,13 +2240,13 @@ ul.icons {
       border-color: rgba(255, 255, 255, 0.25); }
   #footer input[type="checkbox"]:checked + label:before,
   #footer input[type="radio"]:checked + label:before {
-    background-color: #ce1b28;
-    border-color: #ce1b28;
+    background-color: rgb(99, 205, 218);
+    border-color: rgb(99, 205, 218);
     color: #ffffff; }
   #footer input[type="checkbox"]:focus + label:before,
   #footer input[type="radio"]:focus + label:before {
-    border-color: #ce1b28;
-    box-shadow: 0 0 0 1px #ce1b28; }
+    border-color: rgb(99, 205, 218);
+    box-shadow: 0 0 0 1px rgb(99, 205, 218); }
   #footer ::-webkit-input-placeholder {
     color: rgba(255, 255, 255, 0.4) !important; }
   #footer :-moz-placeholder {
