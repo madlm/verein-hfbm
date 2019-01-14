@@ -52,7 +52,7 @@
 					<div class="line top"></div>
 					<p>Wir unterstützen bei der Anschaffung von teuren Hilfsmitteln für den Alltag oder bei wichtigen Therapien.</p>
 					<div class="line"></div>
-					<p>Wir unterstützt Einrichtungen wie Kindergärten bei ihrer Arbeit z.B. durch die Anschaffung entsprechend pädagogisch unterstützender Geräte.</p>
+					<p>Wir unterstützen Einrichtungen wie Kindergärten bei ihrer Arbeit z.B. durch die Anschaffung entsprechend pädagogisch unterstützender Geräte.</p>
 					<div class="line bottom"></div>
 					<p>Der Verein ist Anfang 2018 gegründet worden und er ist rechtlich als gemeinnützige Einrichtung anerkannt.</p>
 				</div>
@@ -86,11 +86,6 @@
 				<div class="inner">
 					<h2>Unterstützung</h2>
 					<p>Wenn Sie den Verein unterstützen möchten können Sie Ihre Spende gern auf folgendes Konto überweisen:</p> 
-					<!--p>Bankverbindung:</p>
-					<p>IBAN DE19 8205 7070 0106 024450</p> 
-					<p>BIC: HELADEF1EIC</p>
-					<p>Kreissparkasse Eichsfeld</p>
-					<p>Wir stellen Ihnen gern im Nachgang eine Spendenbescheinigung aus.</p-->
 					</p>
 					<table class="account">
 						<tr>
@@ -98,7 +93,7 @@
 							<td>Hilfe für besondere Menschen e.V.</td>
 						</tr>
 						<tr><td>IBAN DE19 8205 7070 0106 024450</td></tr>
-						<tr><td>BIC: HELADEF1EICy</td></tr>
+						<tr><td>BIC: HELADEF1EIC</td></tr>
 						<tr><td>Kreissparkasse Eichsfeld</td></tr>
 					</table>
 					<p>Wir stellen Ihnen gern im Nachgang eine Spendenbescheinigung aus.</p>
@@ -162,20 +157,57 @@
 			</section>
 
 		<!-- Footer -->
-			<footer id="footer">
+			<footer id="footer" class="wrapper">
 				<div class="inner">
 					<div class="content">
-						<section>
-							<h3>Kontakt</h3>
-							<p>Verein "Hilfe für besondere Menschen e.V."</p>							
-							<p>37308 Heilbad Heiligenstadt</p>							
-							<p>vorstan<strong>[at]</strong>verein-hfbm.de</p>
-						</section>
+						<div class="row">
+							<!-- Form -->
+							<div class="col-6 col-12-medium">
+								<h3>Kontaktformular</h3>
+								<form action="https://formspree.io/martinm.86@hotmail.com" method="POST" />
+									<div class="row gtr-uniform">
+										<div class="col-6 col-12-xsmall">
+											<input type="text" name="name" id="name" value="" placeholder="Name" />
+										</div>
+										<div class="col-6 col-12-xsmall">
+											<input type="email" name="email" id="email" value="" placeholder="Email" />
+										</div>
+										<!-- Break -->
+										<div class="col-12">
+											<select name="category" id="category">
+												<option value="">Anliegen auswählen</option>
+												<option value="alpha">Unterstützung beantragen</option>
+												<option value="beta">Den Verein Unterstützen</option>
+												<option value="gamma">Fragen &amp; Kontakt</option>
+											</select>
+										</div>
+										<!-- Break -->
+										<div class="col-12">
+											<textarea name="textarea" id="textarea" placeholder="Ihr Anliegen" rows="6"></textarea>
+										</div>
+										<!-- Break -->
+										<div class="col-12">
+											<ul class="actions">
+												<li><input type="submit" value="Senden" class="primary" /></li>
+												<li><input type="reset" value="Zurücksetzen" /></li>
+											</ul>
+										</div>
+									</div>
+								</form>
+							</div>
+							<div class="col-6 col-12-medium">
+								<h3>Kontakt</h3>
+								<p>Verein "Hilfe für besondere Menschen e.V."</p>							
+								<p>37308 Heilbad Heiligenstadt</p>							
+								<p>vorstan<strong>[at]</strong>verein-hfbm.de</p>
+							</div>
+						</div>
 					</div>
 					<div class="copyright">
 						<a href="Datenschutz.html">Datenschutz</a>|<a href="Impressum.html">Impressum</a></a>.
 					</div>
 				</div>
+			</div>
 			</footer>
 
 		<!-- Scripts -->
