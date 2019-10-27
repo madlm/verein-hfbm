@@ -87,6 +87,20 @@ input, select, textarea {
   -ms-appearance: none;
   appearance: none; }
 
+/* Pages */
+
+/* Matschanlage */
+.fotorama.matsch {
+  margin: 3em auto;
+}
+
+
+
+/* Typography */
+.fotorama__wrap.fotorama__wrap--css3.fotorama__wrap--slide.fotorama__wrap--toggle-arrows {
+  margin: auto;
+}
+
 /* Typography */
 html {
   font-size: 13pt; }
