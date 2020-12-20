@@ -94,6 +94,17 @@ input, select, textarea {
   margin: 3em auto;
 }
 
+/* Finja */
+
+.twoimg {
+  text-align: center;
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+.two-img {
+    width: 30em;    
+}
+
 
 
 /* Typography */
