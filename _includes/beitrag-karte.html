@@ -9,7 +9,6 @@
          alt="" loading="lazy" decoding="async" width="800" height="600">
   </div>
   <div class="karte__text">
-    {% unless b.datum_unsicher %}<p class="karte__datum"><time datetime="{{ b.date | date: '%Y-%m' }}">{% include monat.html datum=b.date %}</time></p>{% endunless %}
     <h3 class="karte__titel"><a href="{{ b.url | relative_url }}">{{ b.kurztitel | default: b.title }}</a></h3>
     <p class="karte__teaser">{{ b.teaser }}</p>
     <span class="karte__mehr" aria-hidden="true">{% if b.video %}Video ansehen{% else %}Weiterlesen{% endif %} →</span>

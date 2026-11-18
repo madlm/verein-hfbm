@@ -11,7 +11,7 @@ layout: default
   <header class="beitrag__kopf">
     <div class="rahmen rahmen--schmal">
       <a class="zurueck" href="{{ zurueck_ziel | relative_url }}">← {{ zurueck_text }}</a>
-      <p class="beitrag__meta">{{ art }}{% unless page.datum_unsicher %} · <time datetime="{{ page.date | date: '%Y-%m' }}">{% include monat.html datum=page.date %}</time>{% endunless %}</p>
+      <p class="beitrag__meta">{{ art }}</p>
       <h1>{{ page.title }}</h1>
       {% if page.untertitel %}<p class="beitrag__untertitel">{{ page.untertitel }}</p>{% endif %}
     </div>

@@ -42,7 +42,7 @@ Kontaktformular sendet beim Absenden an Formspree.
    untertitel: "Einleitungssatz unter der Überschrift"
    teaser: "Ein Satz für die Karte auf der Startseite."
    kategorie: projekt          # oder: aktion
-   date: 2026-11-01            # Pflicht – bestimmt die Reihenfolge
+   date: 2026-11-01            # Pflicht – bestimmt die Reihenfolge (wird nicht angezeigt)
    titelbild: titel
    bilder: [bild-1, bild-2]    # erstes Bild = großes Bild oben
    ---
