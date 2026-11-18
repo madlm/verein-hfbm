@@ -13,6 +13,10 @@
 			}
 		}
 
+		p a {
+			text-decoration: underline;
+		}
+
 		.content {
 			@include vendor('display', 'flex');
 

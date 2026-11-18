@@ -2401,6 +2401,8 @@ ul.icons {
     text-decoration: none; }
     #footer a:hover {
       color: rgb(99, 205, 218); }
+    #footer p a {
+      text-decoration: underline; }
   #footer .content {
     display: -moz-flex;
     display: -webkit-flex;
