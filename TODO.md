@@ -2,8 +2,6 @@
 
 ## Offen
 - [ ] Prüfen, dass die Testanfrage vom 18.11. per Mail bei info@/vorstand@ ankam (Martin) (2026-11-18)
-- [ ] Formspree: 3 alte Formulare „info@verein-hfbm.de“ (Alt-Format, tot) löschen (2026-11-18)
-- [ ] Impressum § 18 MStV: Martin Müller c/o Vereinsanschrift eingetragen — so gewollt? (2026-11-18)
 - [ ] Dependabot-Alert #5 (jQuery < 3.4.0) sollte sich nach Rescan schließen — sonst als behoben schließen (2026-11-18)
 - [ ] c-woelfel.html: Bildergalerie ist leer — Fotos fehlen (2026-11-10)
 - [ ] Bilder/Video verkleinern: src/so-bist-du.mp4 (36 MB), PNGs in therapiehund-socke (je ~3 MB), finja/matschanlage (2026-11-10)
@@ -16,6 +14,7 @@
 - [ ] index.html: id="projekte" doppelt vergeben (2026-11-18)
 
 ## Erledigt
+- [x] Formspree: 3 alte Formulare gelöscht (nur Test-/Spam-Einträge); Impressum von Martin bestätigt (2026-11-18)
 - [x] Kontaktformular läuft: neues Formspree-Formular xppdrkgp, Live-Testanfrage angekommen (2026-11-18)
 - [x] Profilbild Martin Müller ersetzt (martin-mueller.jpg); docx-Entwurf entfernt (2026-11-18)
 - [x] Sascha-Galerie live repariert (Umlaut im Dateinamen, seit 12/2023 kaputt) (2026-11-18)
@@ -25,4 +24,3 @@
 - [x] Kontaktformular neu gebaut (Formspree /f/mbjavdjn, Danke-Meldung, Spamschutz), nur noch auf der Startseite (2026-11-18)
 - [x] Datenschutzerklärung überarbeitet: Hosting, Formspree, Zoho; Google Fonts/YouTube raus (2026-11-18)
 - [x] jQuery, Fotorama und Raleway lokal statt von Google/cdnjs (2026-11-10)
-- [x] Menülinks auf Unterseiten, fehlende Bild-Verweise, </footer>, Alt-Text korrigiert (2026-11-10)
