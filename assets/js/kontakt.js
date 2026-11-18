@@ -1,8 +1,8 @@
 /*
  * Kontaktformular: sendet im Hintergrund an Formspree und zeigt die
- * Bestätigung direkt auf der Seite. Klappt das nicht (z. B. weil in
- * Formspree reCAPTCHA aktiv ist oder kein Netz), wird das Formular
- * klassisch abgeschickt — Formspree übernimmt dann Captcha und Danke-Seite.
+ * Bestätigung direkt auf der Seite. Lehnt Formspree das ab (z. B. weil
+ * reCAPTCHA aktiv ist), wird das Formular klassisch abgeschickt —
+ * Formspree übernimmt dann Captcha und Danke-Seite.
  */
 (function () {
 	var form = document.getElementById('kontaktformular');
@@ -14,14 +14,37 @@
 	var anliegen = form.querySelector('select[name="anliegen"]');
 	var basisBetreff = betreff.value;
 
+	var meldungen = {
+		TYPE_EMAIL: 'Bitte geben Sie eine gültige E-Mail-Adresse an.',
+		REQUIRED_FIELD_MISSING: 'Bitte füllen Sie alle Felder aus.',
+		REQUIRED_FIELD_EMPTY: 'Bitte füllen Sie alle Felder aus.'
+	};
+
 	function zeige(text) {
 		status.textContent = text;
 	}
 
+	function bereit() {
+		button.disabled = false;
+	}
+
 	function klassischAbsenden() {
-		// form.submit() löst kein submit-Event aus, also keine Schleife.
+		// Vor dem Verlassen der Seite zurücksetzen, damit „Zurück“ ein
+		// benutzbares Formular zeigt. form.submit() löst kein submit-Event aus.
+		bereit();
+		zeige('');
 		form.submit();
 	}
+
+	// Rückkehr per „Zurück“ (Browser-Cache): Formular wieder freigeben.
+	window.addEventListener('pageshow', function () {
+		bereit();
+		zeige('');
+	});
+
+	form.addEventListener('reset', function () {
+		zeige('');
+	});
 
 	form.addEventListener('submit', function (event) {
 		event.preventDefault();
@@ -37,18 +60,23 @@
 		}).then(function (antwort) {
 			if (antwort.ok) {
 				form.reset();
-				button.disabled = false;
+				bereit();
 				zeige('Vielen Dank! Ihre Nachricht ist bei uns angekommen. Wir melden uns so bald wie möglich.');
 				return;
 			}
 			return antwort.json().catch(function () { return {}; }).then(function (daten) {
-				if (antwort.status === 422 && daten.errors) {
-					button.disabled = false;
-					zeige('Bitte prüfen Sie Ihre Eingaben: ' + daten.errors.map(function (f) { return f.message; }).join(' '));
+				var feldFehler = (daten.errors || []).filter(function (f) { return f.field; });
+				if (antwort.status === 422 && feldFehler.length) {
+					bereit();
+					zeige(meldungen[feldFehler[0].code] || 'Bitte prüfen Sie Ihre Eingaben.');
 					return;
 				}
 				klassischAbsenden();
 			});
-		}).catch(klassischAbsenden);
+		}).catch(function () {
+			// Kein Netz: hier bleiben, damit die Eingaben nicht verloren gehen.
+			bereit();
+			zeige('Die Nachricht konnte nicht gesendet werden. Bitte prüfen Sie Ihre Internetverbindung und versuchen Sie es erneut.');
+		});
 	});
 })();
