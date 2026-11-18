@@ -1,0 +1,18 @@
+# Stammdaten des Vereins — werden auf allen Seiten verwendet.
+name: Hilfe für besondere Menschen e.V.
+strasse: Kirschweg 3
+ort: 37308 Heilbad Heiligenstadt
+email_kontakt: info@verein-hfbm.de
+email_vorstand: vorstand@verein-hfbm.de
+gegruendet: 2018
+register: VR400567
+registergericht: Amtsgericht Heilbad Heiligenstadt
+
+bank:
+  inhaber: Hilfe für besondere Menschen e.V.
+  iban: DE19 8205 7070 0106 0244 50
+  bic: HELADEF1EIC
+  institut: Kreissparkasse Eichsfeld
+
+# Kontaktformular (Formspree)
+formular: https://formspree.io/f/xppdrkgp

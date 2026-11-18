@@ -9,7 +9,7 @@
 	if (!form || !window.fetch || !window.FormData) return;
 
 	var status = document.getElementById('kontakt-status');
-	var button = form.querySelector('input[type="submit"]');
+	var button = form.querySelector('[type="submit"]');
 	var betreff = form.querySelector('input[name="_subject"]');
 	var anliegen = form.querySelector('select[name="anliegen"]');
 	var basisBetreff = betreff.value;
@@ -20,8 +20,10 @@
 		REQUIRED_FIELD_EMPTY: 'Bitte füllen Sie alle Felder aus.'
 	};
 
-	function zeige(text) {
+	function zeige(text, art) {
 		status.textContent = text;
+		status.classList.toggle('ist-erfolg', art === 'erfolg');
+		status.classList.toggle('ist-fehler', art === 'fehler');
 	}
 
 	function bereit() {
@@ -61,7 +63,7 @@
 			if (antwort.ok) {
 				form.reset();
 				bereit();
-				zeige('Vielen Dank! Ihre Nachricht ist bei uns angekommen. Wir melden uns so bald wie möglich.');
+				zeige('Vielen Dank! Ihre Nachricht ist bei uns angekommen. Wir melden uns so bald wie möglich.', 'erfolg');
 				return;
 			}
 			return antwort.json().catch(function () { return {}; }).then(function (daten) {
@@ -69,13 +71,13 @@
 					// Formular bei Formspree nicht (mehr) eingerichtet: hier bleiben,
 					// statt auf eine Fehlerseite zu springen und den Text zu verlieren.
 					bereit();
-					zeige('Das Formular ist gerade nicht erreichbar. Bitte schreiben Sie uns direkt an info@verein-hfbm.de.');
+					zeige('Das Formular ist gerade nicht erreichbar. Bitte schreiben Sie uns direkt an info@verein-hfbm.de.', 'fehler');
 					return;
 				}
 				var feldFehler = (daten.errors || []).filter(function (f) { return f.field; });
 				if (antwort.status === 422 && feldFehler.length) {
 					bereit();
-					zeige(meldungen[feldFehler[0].code] || 'Bitte prüfen Sie Ihre Eingaben.');
+					zeige(meldungen[feldFehler[0].code] || 'Bitte prüfen Sie Ihre Eingaben.', 'fehler');
 					return;
 				}
 				klassischAbsenden();
@@ -83,7 +85,7 @@
 		}).catch(function () {
 			// Kein Netz: hier bleiben, damit die Eingaben nicht verloren gehen.
 			bereit();
-			zeige('Die Nachricht konnte nicht gesendet werden. Bitte prüfen Sie Ihre Internetverbindung und versuchen Sie es erneut.');
+			zeige('Die Nachricht konnte nicht gesendet werden. Bitte prüfen Sie Ihre Internetverbindung und versuchen Sie es erneut.', 'fehler');
 		});
 	});
 })();
