@@ -65,6 +65,13 @@
 				return;
 			}
 			return antwort.json().catch(function () { return {}; }).then(function (daten) {
+				if (antwort.status === 404) {
+					// Formular bei Formspree nicht (mehr) eingerichtet: hier bleiben,
+					// statt auf eine Fehlerseite zu springen und den Text zu verlieren.
+					bereit();
+					zeige('Das Formular ist gerade nicht erreichbar. Bitte schreiben Sie uns direkt an info@verein-hfbm.de.');
+					return;
+				}
 				var feldFehler = (daten.errors || []).filter(function (f) { return f.field; });
 				if (antwort.status === 422 && feldFehler.length) {
 					bereit();
