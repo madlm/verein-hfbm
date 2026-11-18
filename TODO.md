@@ -1,6 +1,12 @@
 # TODO — verein-hfbm
 
 ## Offen
+- [ ] Redesign auf Branch `redesign` (Worktree .worktrees/redesign) fertigstellen (2026-11-18)
+      Fertig (WIP-Commit): Jekyll-Gerüst, Layouts, CSS, seite.js, WebP-Bilder, Nunito, Daten (verein/vorstand).
+      Offen: _beitraege/*.md aus scratchpad-JSON erzeugen (Titelfehler Heider/Maja/Matschanlage korrigieren),
+      kontakt.js an neues Formular anpassen, Impressum/Datenschutz/credits als Seiten, alte Dateien löschen,
+      Video nach assets/video verschieben, favicon tauschen, Jekyll lokal testen (gem install lief noch), Screenshots, Review, PR.
+- [ ] Video verkleinern: ffmpeg per Homebrew scheitert (Intel/macOS 15, Tier 3), swiftc kaputt (CLT-Modulemap) (2026-11-18)
 - [ ] Prüfen, dass die Testanfrage vom 18.11. per Mail bei info@/vorstand@ ankam (Martin) (2026-11-18)
 - [ ] Dependabot-Alert #5 (jQuery < 3.4.0) sollte sich nach Rescan schließen — sonst als behoben schließen (2026-11-18)
 - [ ] c-woelfel.html: Bildergalerie ist leer — Fotos fehlen (2026-11-10)
