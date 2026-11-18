@@ -11,7 +11,7 @@ layout: default
   <header class="beitrag__kopf">
     <div class="rahmen rahmen--schmal">
       <a class="zurueck" href="{{ zurueck_ziel | relative_url }}">← {{ zurueck_text }}</a>
-      <p class="beitrag__meta">{{ art }} · <time datetime="{{ page.datum | date: '%Y-%m' }}">{% include monat.html datum=page.datum %}</time></p>
+      <p class="beitrag__meta">{{ art }}{% unless page.datum_unsicher %} · <time datetime="{{ page.date | date: '%Y-%m' }}">{% include monat.html datum=page.date %}</time>{% endunless %}</p>
       <h1>{{ page.title }}</h1>
       {% if page.untertitel %}<p class="beitrag__untertitel">{{ page.untertitel }}</p>{% endif %}
     </div>
@@ -55,8 +55,8 @@ layout: default
           {% for b in page.bilder %}
             <li>
               <a href="{{ ordner | append: b | append: '-1600.webp' | relative_url }}" data-galerie="beitrag">
-                <img src="{{ ordner | append: b | append: '-800.webp' | relative_url }}"
-                     alt="Bild {{ forloop.index }} von {{ forloop.length }}: {{ page.title }}" loading="lazy" decoding="async" width="800" height="600">
+                <img src="{{ ordner | append: b | append: '-400.webp' | relative_url }}"
+                     alt="Bild {{ forloop.index }} von {{ forloop.length }}: {{ page.title }}" loading="lazy" decoding="async" width="400" height="400">
               </a>
             </li>
           {% endfor %}
@@ -71,7 +71,7 @@ layout: default
     </aside>
   </div>
 
-  {%- assign weitere = site.beitraege | where: 'kategorie', page.kategorie | where_exp: 'b', 'b.url != page.url' | sort: 'datum' | reverse -%}
+  {%- assign weitere = site.beitraege | where: 'kategorie', page.kategorie | where_exp: 'b', 'b.url != page.url' | sort: 'date' | reverse -%}
   {% if weitere.size > 0 %}
   <section class="abschnitt abschnitt--hell" aria-labelledby="weitere-titel">
     <div class="rahmen">

@@ -3,6 +3,7 @@
 # Lokale Vorschau: siehe README.md
 
 title: Hilfe für besondere Menschen e.V.
+tagline: Gemeinnütziger Verein aus dem Eichsfeld
 description: >-
   Gemeinnütziger Verein aus dem Eichsfeld. Wir unterstützen Kinder und Erwachsene
   mit Behinderung, ihre Familien und Einrichtungen – mit Hilfsmitteln, Therapien
@@ -26,10 +27,12 @@ defaults:
       type: beitraege
     values:
       layout: beitrag
+      image: /assets/bilder/allgemein/vorschau.jpg
   - scope:
       path: ""
     values:
       layout: seite
+      image: /assets/bilder/allgemein/vorschau.jpg
 
 plugins:
   - jekyll-seo-tag

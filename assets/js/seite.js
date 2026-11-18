@@ -41,6 +41,9 @@
 				navigator.clipboard.writeText(k.getAttribute('data-kopieren')).then(function () {
 					k.textContent = 'Kopiert ✓';
 					setTimeout(function () { k.textContent = text; }, 2000);
+				}).catch(function () {
+					k.textContent = 'Bitte manuell kopieren';
+					setTimeout(function () { k.textContent = text; }, 3000);
 				});
 			});
 		});
@@ -69,7 +72,7 @@
 		var zeige = function (i) {
 			aktuell = (i + bilder.length) % bilder.length;
 			bild.src = bilder[aktuell];
-			bild.alt = 'Bild ' + (aktuell + 1) + ' von ' + bilder.length;
+			bild.alt = 'Bild ' + (aktuell + 1) + ' von ' + bilder.length + ': ' + document.title.split(' | ')[0];
 			zaehler.textContent = (aktuell + 1) + ' / ' + bilder.length;
 		};
 		links.forEach(function (l) {

@@ -60,7 +60,8 @@ body {
 img { max-width: 100%; height: auto; display: block; }
 a { color: var(--blau); text-underline-offset: .18em; text-decoration-thickness: 1.5px; }
 a:hover { color: var(--blau-dunkel); }
-:focus-visible { outline: 3px solid var(--gelb); outline-offset: 3px; border-radius: 4px; }
+:focus-visible { outline: 3px solid var(--blau-dunkel); outline-offset: 3px; border-radius: 4px; box-shadow: 0 0 0 6px var(--gelb-hell); }
+.fusszeile :focus-visible { outline-color: var(--gelb); box-shadow: none; }
 h1, h2, h3 { line-height: 1.2; margin: 0 0 .5em; font-weight: 800; letter-spacing: -.01em; text-wrap: balance; hyphens: auto; overflow-wrap: break-word; }
 h1 { font-size: clamp(2rem, 1.4rem + 2.6vw, 3.25rem); }
 h2 { font-size: clamp(1.6rem, 1.25rem + 1.4vw, 2.25rem); }
@@ -112,7 +113,7 @@ main:focus { outline: none; }
 .hauptmenue a:not(.knopf):hover { background: var(--blau-hell); color: var(--blau-dunkel); }
 .hauptmenue li:last-child { margin-left: 8px; }
 
-.menue-knopf { display: none; align-items: center; gap: 10px; min-height: 44px; padding: 0 14px; border: 2px solid var(--linie); border-radius: 999px; background: var(--weiss); color: var(--tinte); font: inherit; font-weight: 800; cursor: pointer; }
+.menue-knopf { display: none; align-items: center; gap: 10px; min-height: 44px; padding: 0 14px; border: 2px solid #8C8574; border-radius: 999px; background: var(--weiss); color: var(--tinte); font: inherit; font-weight: 800; cursor: pointer; }
 .menue-knopf__striche, .menue-knopf__striche::before, .menue-knopf__striche::after { display: block; width: 18px; height: 2px; background: currentColor; border-radius: 2px; position: relative; transition: transform .2s, background .2s; }
 .menue-knopf__striche::before, .menue-knopf__striche::after { content: ""; position: absolute; left: 0; }
 .menue-knopf__striche::before { top: -6px; } .menue-knopf__striche::after { top: 6px; }
@@ -185,7 +186,7 @@ main:focus { outline: none; }
 .karte__titel a { color: var(--tinte); text-decoration: none; }
 .karte__titel a::after { content: ""; position: absolute; inset: 0; } /* ganze Karte klickbar */
 .karte__titel a:focus-visible { outline: none; }
-.karte:focus-within { outline: 3px solid var(--gelb); outline-offset: 3px; }
+.karte:focus-within { outline: 3px solid var(--blau-dunkel); outline-offset: 3px; }
 .karte__teaser { color: var(--grau); margin-bottom: 14px; }
 .karte__mehr { margin-top: auto; font-weight: 800; color: var(--blau); }
 
@@ -222,7 +223,7 @@ main:focus { outline: none; }
 .feld label { font-weight: 800; }
 .feld input, .feld select, .feld textarea {
   width: 100%; font: inherit; color: var(--tinte); background: var(--weiss);
-  border: 2px solid #D9D1C1; border-radius: var(--radius-klein); padding: 12px 14px; min-height: 48px;
+  border: 2px solid #8C8574; border-radius: var(--radius-klein); padding: 12px 14px; min-height: 48px;
   transition: border-color .15s, box-shadow .15s;
 }
 .feld textarea { resize: vertical; min-height: 140px; }
@@ -230,7 +231,7 @@ main:focus { outline: none; }
 .feld input:focus, .feld select:focus, .feld textarea:focus { outline: none; border-color: var(--blau); box-shadow: 0 0 0 4px var(--blau-hell); }
 .formular__hinweis { font-size: .92rem; color: var(--grau); }
 .formular__status { margin: 16px 0 0; font-weight: 700; }
-.formular__status:empty { display: none; }
+.formular__status:empty { margin: 0; }
 .formular__status.ist-erfolg { padding: 14px 16px; border-radius: var(--radius-klein); background: #E8F5DC; color: #2F5E10; }
 .formular__status.ist-fehler { padding: 14px 16px; border-radius: var(--radius-klein); background: #FDE7E5; color: #9B2219; }
 
@@ -240,7 +241,7 @@ main:focus { outline: none; }
 .beitrag__meta { margin: 0 0 8px; font-weight: 700; color: var(--grau); text-transform: uppercase; letter-spacing: .05em; font-size: .9rem; }
 .beitrag__untertitel { font-size: clamp(1.15rem, 1rem + .5vw, 1.35rem); color: var(--grau); margin: 0; }
 .beitrag__titelbild { margin: 0 0 clamp(28px, 4vw, 40px); }
-.beitrag__titelbild img { width: 100%; max-height: 70vh; object-fit: cover; border-radius: var(--radius); box-shadow: var(--schatten); }
+.beitrag__titelbild img { width: 100%; aspect-ratio: 4 / 3; max-height: 70vh; object-fit: cover; border-radius: var(--radius); box-shadow: var(--schatten); }
 .fliesstext { font-size: 1.125rem; }
 .fliesstext a { overflow-wrap: anywhere; }
 .fliesstext p, .fliesstext ul { max-width: 68ch; }

@@ -5,8 +5,8 @@ description: Gemeinnütziger Verein aus dem Eichsfeld. Wir unterstützen Kinder 
 koerperklasse: startseite
 ---
 {%- assign v = site.data.verein -%}
-{%- assign projekte = site.beitraege | where: 'kategorie', 'projekt' | sort: 'datum' | reverse -%}
-{%- assign aktionen = site.beitraege | where: 'kategorie', 'aktion' | sort: 'datum' | reverse -%}
+{%- assign projekte = site.beitraege | where: 'kategorie', 'projekt' | sort: 'date' | reverse -%}
+{%- assign aktionen = site.beitraege | where: 'kategorie', 'aktion' | sort: 'date' | reverse -%}
 
 <!-- Begrüßung -->
 <section class="held" aria-labelledby="held-titel">
@@ -29,6 +29,7 @@ koerperklasse: startseite
 </section>
 
 <!-- Was wir tun -->
+<span id="mission"></span>
 <section class="abschnitt" id="was-wir-tun" aria-labelledby="was-titel">
   <div class="rahmen">
     <h2 id="was-titel" class="abschnitt__titel">Was wir tun</h2>
@@ -37,12 +38,12 @@ koerperklasse: startseite
       <li class="leistung leistung--blau">
         <svg class="leistung__symbol" viewBox="0 0 48 48" aria-hidden="true"><circle cx="20" cy="30" r="11" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="22" cy="9" r="4" fill="currentColor"/><path d="M22 14v12h12l4 10" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <h3>Hilfsmittel für den Alltag</h3>
-        <p>Wir helfen bei der Anschaffung teurer Hilfsmittel – vom E-Bike mit Anhänger bis zum Treppenlift.</p>
+        <p>Wir helfen bei der Anschaffung teurer Hilfsmittel – vom E-Bike mit Anhänger bis zum Fahrstuhl.</p>
       </li>
       <li class="leistung leistung--tuerkis">
         <svg class="leistung__symbol" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 40S7 30 7 18a8.5 8.5 0 0 1 17-2 8.5 8.5 0 0 1 17 2c0 12-17 22-17 22z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M14 22h6l3-5 4 9 3-4h4" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <h3>Wichtige Therapien</h3>
-        <p>Wir fördern Therapien, die Kindern spürbar helfen – etwa Reit-, Delphin- oder Assistenzhund-Therapie.</p>
+        <p>Wir fördern wichtige Therapien – etwa Reittherapie, Delphintherapie oder einen Assistenzhund.</p>
       </li>
       <li class="leistung leistung--gelb">
         <svg class="leistung__symbol" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 22 24 9l16 13" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 19v20h24V19" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><circle cx="20" cy="29" r="3" fill="currentColor"/><circle cx="29" cy="29" r="3" fill="currentColor"/></svg>
@@ -50,7 +51,7 @@ koerperklasse: startseite
         <p>Wir unterstützen Kindergärten und Einrichtungen mit pädagogisch wertvoller Ausstattung.</p>
       </li>
     </ul>
-    <p class="hinweis-zeile">Der Verein wurde {{ v.gegruendet }} gegründet und ist als gemeinnützig anerkannt. Bisher haben wir <strong>{{ projekte.size }} Projekte</strong> gefördert.</p>
+    <p class="hinweis-zeile">Der Verein wurde {{ v.gegruendet }} gegründet und ist als gemeinnützig anerkannt. Einige unserer Projekte stellen wir hier vor.</p>
   </div>
 </section>
 
@@ -77,6 +78,7 @@ koerperklasse: startseite
 </section>
 
 <!-- Spenden -->
+<span id="cta"></span>
 <section class="abschnitt abschnitt--blau" id="spenden" aria-labelledby="spenden-titel">
   <div class="rahmen spenden">
     <div class="spenden__text">

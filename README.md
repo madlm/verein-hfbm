@@ -32,7 +32,8 @@ Kontaktformular sendet beim Absenden an Formspree.
    werkzeuge/bild-optimieren.sh ~/Downloads/foto2.jpg     assets/bilder/mein-projekt bild-2
    ```
 
-2. Datei `_beitraege/mein-projekt.html` anlegen (Dateiname = Adresse `/mein-projekt.html`):
+2. Datei `_beitraege/mein-projekt.html` anlegen (Dateiname = Adresse `/mein-projekt.html`,
+   nur a–z, 0–9 und Bindestrich – keine Umlaute oder Großbuchstaben):
 
    ```html
    ---
@@ -41,7 +42,7 @@ Kontaktformular sendet beim Absenden an Formspree.
    untertitel: "Einleitungssatz unter der Überschrift"
    teaser: "Ein Satz für die Karte auf der Startseite."
    kategorie: projekt          # oder: aktion
-   datum: 2026-11-01           # bestimmt die Reihenfolge
+   date: 2026-11-01            # Pflicht – bestimmt die Reihenfolge
    titelbild: titel
    bilder: [bild-1, bild-2]    # erstes Bild = großes Bild oben
    ---
