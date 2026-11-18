@@ -1,0 +1,49 @@
+# Webseite „Hilfe für besondere Menschen e.V.“
+# Wird von GitHub Pages mit Jekyll gebaut — kein eigener Build-Schritt nötig.
+# Lokale Vorschau: siehe README.md
+
+title: Hilfe für besondere Menschen e.V.
+description: >-
+  Gemeinnütziger Verein aus dem Eichsfeld. Wir unterstützen Kinder und Erwachsene
+  mit Behinderung, ihre Familien und Einrichtungen – mit Hilfsmitteln, Therapien
+  und Ausstattung.
+url: "https://verein-hfbm.de"
+baseurl: ""
+lang: de_DE
+locale: de_DE
+logo: /assets/bilder/allgemein/emblem-256.png
+image: /assets/bilder/allgemein/vorschau.jpg
+
+# Projekte und Aktionen: je eine Datei in _beitraege/
+collections:
+  beitraege:
+    output: true
+    permalink: /:name.html   # alte Adressen (z. B. /finja.html) bleiben erhalten
+
+defaults:
+  - scope:
+      path: ""
+      type: beitraege
+    values:
+      layout: beitrag
+  - scope:
+      path: ""
+    values:
+      layout: seite
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+markdown: kramdown
+kramdown:
+  input: GFM
+
+exclude:
+  - README.md
+  - TODO.md
+  - Gemfile
+  - Gemfile.lock
+  - werkzeuge/
+  - vendor/
+  - .worktrees/

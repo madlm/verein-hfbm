@@ -1,0 +1,27 @@
+{%- assign start = '/' | relative_url -%}
+{%- if page.url == '/' or page.url == '/index.html' -%}{%- assign start = '' -%}{%- endif -%}
+<a class="sprunglink" href="#inhalt">Zum Inhalt springen</a>
+<header class="kopfzeile" data-kopfzeile>
+  <div class="kopfzeile__innen">
+    <a class="marke" href="{{ '/' | relative_url }}" aria-label="{{ site.data.verein.name }} – Startseite">
+      <img class="marke__zeichen" src="{{ '/assets/bilder/allgemein/emblem-128.webp' | relative_url }}" alt="" width="44" height="44">
+      <span class="marke__name">Hilfe für <strong>besondere</strong> Menschen <span class="marke__ev">e.V.</span></span>
+    </a>
+
+    <button class="menue-knopf" type="button" aria-expanded="false" aria-controls="hauptmenue" data-menue-knopf>
+      <span class="menue-knopf__striche" aria-hidden="true"></span>
+      <span class="menue-knopf__text">Menü</span>
+    </button>
+
+    <nav class="hauptmenue" id="hauptmenue" aria-label="Hauptmenü" data-menue>
+      <ul>
+        <li><a href="{{ start }}#was-wir-tun">Über uns</a></li>
+        <li><a href="{{ start }}#projekte">Projekte</a></li>
+        <li><a href="{{ start }}#aktionen">Aktionen</a></li>
+        <li><a href="{{ start }}#vorstand">Vorstand</a></li>
+        <li><a href="{{ start }}#kontakt">Kontakt</a></li>
+        <li><a class="knopf knopf--klein" href="{{ start }}#spenden">Spenden</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

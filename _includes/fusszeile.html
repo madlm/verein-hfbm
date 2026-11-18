@@ -1,0 +1,33 @@
+{%- assign v = site.data.verein -%}
+<footer class="fusszeile">
+  {% include wimpel.html %}
+  <div class="fusszeile__innen">
+    <div class="fusszeile__marke">
+      <img src="{{ '/assets/bilder/allgemein/emblem-128.webp' | relative_url }}" alt="" width="56" height="56" loading="lazy">
+      <p><strong>{{ v.name }}</strong><br>
+        Gemeinnütziger Verein seit {{ v.gegruendet }}</p>
+    </div>
+    <div>
+      <h2 class="fusszeile__titel">Kontakt</h2>
+      <address>
+        {{ v.strasse }}<br>
+        {{ v.ort }}<br>
+        <a href="mailto:{{ v.email_kontakt }}">{{ v.email_kontakt }}</a>
+      </address>
+    </div>
+    <div>
+      <h2 class="fusszeile__titel">Spendenkonto</h2>
+      <p>{{ v.bank.institut }}<br>
+        IBAN <span class="nicht-umbrechen">{{ v.bank.iban }}</span></p>
+    </div>
+    <nav aria-label="Rechtliches">
+      <h2 class="fusszeile__titel">Rechtliches</h2>
+      <ul class="liste-ohne">
+        <li><a href="{{ '/Impressum.html' | relative_url }}">Impressum</a></li>
+        <li><a href="{{ '/Datenschutz.html' | relative_url }}">Datenschutz</a></li>
+        <li><a href="{{ '/credits.html' | relative_url }}">Bildnachweise</a></li>
+      </ul>
+    </nav>
+  </div>
+  <p class="fusszeile__klein">© {{ site.time | date: '%Y' }} {{ v.name }} · Keine Cookies, kein Tracking.</p>
+</footer>

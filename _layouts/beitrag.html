@@ -1,0 +1,93 @@
+---
+layout: default
+---
+{%- assign ordner = '/assets/bilder/' | append: page.slug | append: '/' -%}
+{%- if page.kategorie == 'projekt' -%}
+  {%- assign zurueck_text = 'Alle Projekte' -%}{%- assign zurueck_ziel = '/#projekte' -%}{%- assign art = 'Projekt' -%}
+{%- else -%}
+  {%- assign zurueck_text = 'Alle Aktionen' -%}{%- assign zurueck_ziel = '/#aktionen' -%}{%- assign art = 'Aktion' -%}
+{%- endif -%}
+<article class="beitrag">
+  <header class="beitrag__kopf">
+    <div class="rahmen rahmen--schmal">
+      <a class="zurueck" href="{{ zurueck_ziel | relative_url }}">← {{ zurueck_text }}</a>
+      <p class="beitrag__meta">{{ art }} · <time datetime="{{ page.datum | date: '%Y-%m' }}">{% include monat.html datum=page.datum %}</time></p>
+      <h1>{{ page.title }}</h1>
+      {% if page.untertitel %}<p class="beitrag__untertitel">{{ page.untertitel }}</p>{% endif %}
+    </div>
+  </header>
+
+  <div class="rahmen rahmen--schmal">
+    {% if page.video %}
+      <figure class="video">
+        <video controls preload="none" playsinline
+               poster="{{ ordner | append: page.titelbild | append: '-1600.webp' | relative_url }}">
+          <source src="{{ page.video.datei | relative_url }}" type="video/mp4">
+          Ihr Browser kann dieses Video nicht abspielen.
+          <a href="{{ page.video.datei | relative_url }}">Video herunterladen</a>.
+        </video>
+        <figcaption>{{ page.video.beschreibung }} · {{ page.video.dauer }} · {{ page.video.groesse }}</figcaption>
+      </figure>
+    {% elsif page.bilder.size > 0 %}
+      {%- assign erstes = page.bilder | first -%}
+      <figure class="beitrag__titelbild">
+        <a href="{{ ordner | append: erstes | append: '-1600.webp' | relative_url }}" data-galerie="beitrag">
+          <img src="{{ ordner | append: erstes | append: '-1600.webp' | relative_url }}"
+               srcset="{{ ordner | append: erstes | append: '-800.webp' | relative_url }} 800w, {{ ordner | append: erstes | append: '-1600.webp' | relative_url }} 1600w"
+               sizes="(min-width: 760px) 720px, 100vw" alt="{{ page.bildtext | default: page.title }}" decoding="async">
+        </a>
+      </figure>
+    {% else %}
+      <figure class="beitrag__titelbild">
+        <img src="{{ ordner | append: page.titelbild | append: '-1600.webp' | relative_url }}"
+             alt="{{ page.bildtext | default: page.title }}" decoding="async">
+      </figure>
+    {% endif %}
+
+    <div class="fliesstext">
+      {{ content }}
+    </div>
+
+    {% if page.bilder.size > 1 %}
+      <section class="galerie" aria-labelledby="galerie-titel">
+        <h2 id="galerie-titel">Bilder <span class="galerie__anzahl">({{ page.bilder.size }})</span></h2>
+        <ul class="galerie__raster">
+          {% for b in page.bilder %}
+            <li>
+              <a href="{{ ordner | append: b | append: '-1600.webp' | relative_url }}" data-galerie="beitrag">
+                <img src="{{ ordner | append: b | append: '-800.webp' | relative_url }}"
+                     alt="Bild {{ forloop.index }} von {{ forloop.length }}: {{ page.title }}" loading="lazy" decoding="async" width="800" height="600">
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </section>
+    {% endif %}
+
+    <aside class="danke-kasten">
+      <p><strong>Möchten Sie solche Projekte möglich machen?</strong><br>
+        Mit Ihrer Spende ermöglichen Sie weitere Projekte wie dieses.</p>
+      <a class="knopf" href="{{ '/#spenden' | relative_url }}">Jetzt spenden</a>
+    </aside>
+  </div>
+
+  {%- assign weitere = site.beitraege | where: 'kategorie', page.kategorie | where_exp: 'b', 'b.url != page.url' | sort: 'datum' | reverse -%}
+  {% if weitere.size > 0 %}
+  <section class="abschnitt abschnitt--hell" aria-labelledby="weitere-titel">
+    <div class="rahmen">
+      <h2 id="weitere-titel" class="abschnitt__titel">Weitere {% if page.kategorie == 'projekt' %}Projekte{% else %}Aktionen{% endif %}</h2>
+      <div class="karten">
+        {% for b in weitere limit: 3 %}{% include beitrag-karte.html beitrag=b %}{% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+</article>
+
+<dialog class="leuchtkasten" data-leuchtkasten aria-label="Bildansicht">
+  <img alt="" data-leuchtkasten-bild>
+  <p class="leuchtkasten__zaehler" data-leuchtkasten-zaehler></p>
+  <button class="leuchtkasten__knopf leuchtkasten__zu" type="button" data-leuchtkasten-zu aria-label="Schließen">×</button>
+  <button class="leuchtkasten__knopf leuchtkasten__zurueck" type="button" data-leuchtkasten-zurueck aria-label="Vorheriges Bild">‹</button>
+  <button class="leuchtkasten__knopf leuchtkasten__vor" type="button" data-leuchtkasten-vor aria-label="Nächstes Bild">›</button>
+</dialog>

@@ -1,0 +1,22 @@
+# Vorstand — Reihenfolge = Anzeige auf der Startseite.
+# Fotos: quadratisch, unter assets/bilder/vorstand/ als .webp
+- name: Dieter Althaus
+  amt: 1. Vorsitzender
+  ort: Heilbad Heiligenstadt
+  foto: dieter-althaus.webp
+- name: Gerold Wucherpfennig
+  amt: 2. Vorsitzender
+  ort: Seulingen
+  foto: gerold-wucherpfennig.webp
+- name: Andrea Vogt
+  amt: Kassenwartin
+  ort: Küllstedt
+  foto: andrea-vogt.webp
+- name: Alexandra Althaus
+  amt: Beisitzerin
+  ort: Heilbad Heiligenstadt
+  foto: alexandra-althaus.webp
+- name: Martin Müller
+  amt: Beisitzer
+  ort: Berlin
+  foto: martin-mueller.webp

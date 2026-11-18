@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="de">
+<head>
+{% include kopf.html %}
+</head>
+<body class="{{ page.koerperklasse }}">
+{% include kopfzeile.html %}
+<main id="inhalt" tabindex="-1">
+{{ content }}
+</main>
+{% include fusszeile.html %}
+</body>
+</html>
