@@ -9,3 +9,4 @@
 <link rel="apple-touch-icon" href="{{ '/assets/bilder/allgemein/apple-touch-icon.png' | relative_url }}">
 <meta name="theme-color" content="#FFFBF4">
 <script src="{{ '/assets/js/seite.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
+{% if page.url == '/' %}<script src="{{ '/assets/js/kontakt.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>{% endif %}
