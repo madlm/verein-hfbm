@@ -1,13 +1,13 @@
 # TODO — verein-hfbm
 
 ## Offen
-- [ ] Formspree-Formular mbjavdjn aktivieren (2026-11-18)
-      Live, aber Formspree antwortet 404 „This form isn't set up yet“ (vermutlich info@ nicht bestätigt).
-      Seite zeigt solange info@ als Ausweg. Danach: echte Testanfrage (Betreff, Antwort-an prüfen).
-- [ ] Impressum: Berliner Adresse veraltet; Vereinsanschrift (Straße) fehlt überall (2026-11-18)
-      § 5 DDG verlangt vollständige Anschrift; § 18 Abs. 2 MStV: verantwortliche Person + aktuelle Anschrift.
-- [ ] Auftragsverarbeitungsvertrag (DPA) mit Formspree abschließen — die Datenschutzerklärung nennt ihn (2026-11-18)
-- [ ] Dependabot-Warnung: jQuery 3.2.1 (XSS, moderat) — auf 3.7.x aktualisieren und testen (2026-11-18)
+- [ ] Neues Formspree-Formular anlegen, ID in index.html eintragen (2026-11-18)
+      Alle 3 vorhandenen Formulare sind Alt-Formulare („hard coded in the form action“) → 404 „not set up“.
+      Konto info@ ist verifiziert. Seite zeigt solange info@ als Ausweg. Danach echte Testanfrage.
+- [ ] Impressum § 18 MStV: Martin Müller c/o Vereinsanschrift eingetragen — so gewollt? (2026-11-18)
+- [ ] Vorstand auf Startseite: „Martin Müller – Berlin“ noch aktuell? (2026-11-18)
+- [ ] Dependabot-Alert #5 (jQuery < 3.4.0) sollte sich nach Rescan schließen — sonst als behoben schließen (2026-11-18)
+- [ ] images/weihnachtsspende/Text Weihnachtsspendenaktion 2019.docx öffentlich abrufbar (Textentwurf) — entfernen? (2026-11-18)
 - [ ] c-woelfel.html: Bildergalerie ist leer — Fotos fehlen (2026-11-10)
 - [ ] Bilder/Video verkleinern: src/so-bist-du.mp4 (36 MB), PNGs in therapiehund-socke (je ~3 MB), finja/matschanlage (2026-11-10)
 - [ ] Inhalte prüfen: letzte Änderung Dez. 2023 — Vorstand, neue Projekte, Kontodaten aktuell? (2026-11-10)
@@ -16,10 +16,12 @@
 
 ## Geparkt
 - [ ] Wiederkehrende Teile (Header/Menü/Footer) zentralisieren, z. B. mit Jekyll-Includes (GitHub Pages kann das nativ) (2026-11-10)
-- [ ] Projektseiten laden zwei jQuery-Versionen (1.11.1 für Fotorama, 3.2.1 fürs Template) — aufräumen (2026-11-18)
 - [ ] index.html: id="projekte" doppelt vergeben (2026-11-18)
 
 ## Erledigt
+- [x] Sascha-Galerie live repariert (Umlaut im Dateinamen, seit 12/2023 kaputt) (2026-11-18)
+- [x] jQuery 3.7.1, nur noch eine Version pro Seite; toter banner.jpg-Verweis raus (2026-11-18)
+- [x] Vereinsanschrift Kirschweg 3 in Impressum/Datenschutz; AVV-Satz zu Formspree entfernt (gibt keinen) (2026-11-18)
 - [x] Push: Formular, Datenschutz (Verein als Verantwortlicher), Impressum DDG/MStV, Selbst-Hosting — live (2026-11-18)
 - [x] Kontaktformular neu gebaut (Formspree /f/mbjavdjn, Danke-Meldung, Spamschutz), nur noch auf der Startseite (2026-11-18)
 - [x] Datenschutzerklärung überarbeitet: Hosting, Formspree, Zoho; Google Fonts/YouTube raus (2026-11-18)
