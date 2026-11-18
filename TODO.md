@@ -1,12 +1,13 @@
 # TODO — verein-hfbm
 
 ## Offen
-- [ ] Kontaktformular live schalten (2026-11-10)
-      Umgebaut auf Formspree /f/mbjavdjn (lokal fertig, Review erledigt). Offen: reCAPTCHA in Formspree aus?,
-      Push, echte Testanfrage von der Live-Seite → kommt bei info@ an (Betreff, Antwort-an)?
-- [ ] Datenschutzerklärung: Entwurf prüfen und freigeben (2026-11-18)
-      Auftragsverarbeitungsvertrag (DPA) mit Formspree abschließen — der Text behauptet ihn.
-      Falls reCAPTCHA an bleibt: Abschnitt dazu ergänzen. Verantwortliche Stelle ist eine Privatperson statt des Vereins — prüfen.
+- [ ] Formspree-Formular mbjavdjn aktivieren (2026-11-18)
+      Live, aber Formspree antwortet 404 „This form isn't set up yet“ (vermutlich info@ nicht bestätigt).
+      Seite zeigt solange info@ als Ausweg. Danach: echte Testanfrage (Betreff, Antwort-an prüfen).
+- [ ] Impressum: Berliner Adresse veraltet; Vereinsanschrift (Straße) fehlt überall (2026-11-18)
+      § 5 DDG verlangt vollständige Anschrift; § 18 Abs. 2 MStV: verantwortliche Person + aktuelle Anschrift.
+- [ ] Auftragsverarbeitungsvertrag (DPA) mit Formspree abschließen — die Datenschutzerklärung nennt ihn (2026-11-18)
+- [ ] Dependabot-Warnung: jQuery 3.2.1 (XSS, moderat) — auf 3.7.x aktualisieren und testen (2026-11-18)
 - [ ] c-woelfel.html: Bildergalerie ist leer — Fotos fehlen (2026-11-10)
 - [ ] Bilder/Video verkleinern: src/so-bist-du.mp4 (36 MB), PNGs in therapiehund-socke (je ~3 MB), finja/matschanlage (2026-11-10)
 - [ ] Inhalte prüfen: letzte Änderung Dez. 2023 — Vorstand, neue Projekte, Kontodaten aktuell? (2026-11-10)
@@ -19,8 +20,9 @@
 - [ ] index.html: id="projekte" doppelt vergeben (2026-11-18)
 
 ## Erledigt
+- [x] Push: Formular, Datenschutz (Verein als Verantwortlicher), Impressum DDG/MStV, Selbst-Hosting — live (2026-11-18)
 - [x] Kontaktformular neu gebaut (Formspree /f/mbjavdjn, Danke-Meldung, Spamschutz), nur noch auf der Startseite (2026-11-18)
-- [x] Datenschutzerklärung überarbeitet (Entwurf): Hosting, Formspree, Zoho; Google Fonts/YouTube raus (2026-11-18)
+- [x] Datenschutzerklärung überarbeitet: Hosting, Formspree, Zoho; Google Fonts/YouTube raus (2026-11-18)
 - [x] jQuery, Fotorama und Raleway lokal statt von Google/cdnjs (2026-11-10)
 - [x] Menülinks auf Unterseiten, fehlende Bild-Verweise, </footer>, Alt-Text korrigiert (2026-11-10)
 - [x] Template-Reste (elements/generic.html, Agent, .DS_Store) entfernt (2026-11-10)
